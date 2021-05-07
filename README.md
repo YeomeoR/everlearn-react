@@ -15,5 +15,6 @@ unable to implement/TIME-UP!/Covid jab reactions || symptoms (but wahoo!)
 i) delete and update 'learner'
 ii) show average score
 iii) prevent empty submission on create 'learner'
+iv) modal implementation planned for onClick of user. As not dealt with uid for delete & update, modal not created in time.
 
 
