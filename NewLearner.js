@@ -8,26 +8,25 @@ const NewLearner = () => {
   const [email, setEmail] = React.useState('');
   const [score, setScore] = React.useState('');
 
-    const submitHandler = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
-      const db = firebase.firestore();
-      
-      db.collection('learners')
-        .add({
-          firstName: firstName,
-          lastName: lastName,
-          email: email,
-          score: score,
-        })
-        .then(() => {
-          alert('New Learner Added...');
-        })
-        .catch((error) => console.log(error.message));
-      setFirstName('');
-      setLastName('');
-      setEmail('');
-      setScore('');
+    const db = firebase.firestore();
 
+    db.collection('learners')
+      .add({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        score: score,
+      })
+      .then(() => {
+        alert('New Learner Added...');
+      })
+      .catch((error) => console.log(error.message));
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setScore('');
   };
 
   return (
@@ -57,7 +56,9 @@ const NewLearner = () => {
         value={score}
         onChange={(e) => setScore(e.target.value)}
       />
-      <Button type="submit" >Create New Learner</Button>
+      <Button type="submit" className="btn-info mb-2">
+        Create New Learner
+      </Button>
     </Form>
   );
 };
